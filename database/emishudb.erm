@@ -35,8 +35,8 @@
 		<masterDataBasePath></masterDataBasePath>
 		<use_view_object>false</use_view_object>
 		<export_settings>
-			<category_name_to_export></category_name_to_export>
-			<ddl_output></ddl_output>
+			<category_name_to_export>All</category_name_to_export>
+			<ddl_output>/emishu/database/dbflute_emishudb/playsql/replace-schema.sql</ddl_output>
 			<excel_output></excel_output>
 			<excel_template></excel_template>
 			<image_output></image_output>
