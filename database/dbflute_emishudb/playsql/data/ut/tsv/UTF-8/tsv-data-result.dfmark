@@ -1,0 +1,10 @@
+
+* * * * * * * * * *
+*                 *
+* Tsv Data Result *
+*                 *
+* * * * * * * * * *
+data-directory: playsql/data/ut/tsv/UTF-8
+
+000100-customer.tsv (4)
+000200-brewery.tsv (4)
