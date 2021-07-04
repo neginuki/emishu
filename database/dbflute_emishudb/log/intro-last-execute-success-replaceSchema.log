@@ -1,0 +1,157 @@
+/nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+...Calling the ReplaceSchema task
+nnnnnnnnnn/
+Buildfile: ..\mydbflute\dbflute-1.2.4\build-torque.xml
+
+replace-schema:
+[df-replace-schema] templates
+[df-replace-schema] 2021-07-04 18:34:32,282 INFO  - +------------------------------------------+
+[df-replace-schema] 2021-07-04 18:34:32,291 INFO  - |                                          |
+[df-replace-schema] 2021-07-04 18:34:32,292 INFO  - |              ReplaceSchema               |
+[df-replace-schema] 2021-07-04 18:34:32,305 INFO  - |                                          |
+[df-replace-schema] 2021-07-04 18:34:32,305 INFO  - +------------------------------------------+
+[df-replace-schema] 2021-07-04 18:34:32,357 INFO  - ...Preparing data source:
+[df-replace-schema] 2021-07-04 18:34:32,357 INFO  -   driver = com.mysql.jdbc.Driver
+[df-replace-schema] 2021-07-04 18:34:32,358 INFO  -   url    = jdbc:mysql://localhost:3306/emishudb
+[df-replace-schema] 2021-07-04 18:34:32,358 INFO  -   user   = root
+[df-replace-schema] 2021-07-04 18:34:32,377 INFO  - ...Connecting to database by data source:
+[df-replace-schema] Sun Jul 04 18:34:32 JST 2021 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+[df-replace-schema] 2021-07-04 18:34:33,284 INFO  -   product = MySQL 8.0.16
+[df-replace-schema] 2021-07-04 18:34:33,285 INFO  -   driver  = MySQL Connector Java mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e ) for JDBC 4.0
+[df-replace-schema] 2021-07-04 18:34:33,313 INFO  - 
+[df-replace-schema] 2021-07-04 18:34:33,314 INFO  - * * * * * * * * * * *
+[df-replace-schema] 2021-07-04 18:34:33,314 INFO  - *                   *
+[df-replace-schema] 2021-07-04 18:34:33,314 INFO  - * Initialize Schema *
+[df-replace-schema] 2021-07-04 18:34:33,315 INFO  - *                   *
+[df-replace-schema] 2021-07-04 18:34:33,315 INFO  - * * * * * * * * * * *
+[df-replace-schema] 2021-07-04 18:34:33,345 INFO  - ...Getting tables:
+[df-replace-schema] 2021-07-04 18:34:33,345 INFO  -   schema = {emishudb.emishudb as main}
+[df-replace-schema] 2021-07-04 18:34:33,345 INFO  -   types  = [TABLE, VIEW]
+[df-replace-schema] 2021-07-04 18:34:33,450 INFO  - 
+[df-replace-schema] 2021-07-04 18:34:33,451 INFO  - * * * * * * * * *
+[df-replace-schema] 2021-07-04 18:34:33,451 INFO  - *               *
+[df-replace-schema] 2021-07-04 18:34:33,451 INFO  - * Create Schema *
+[df-replace-schema] 2021-07-04 18:34:33,451 INFO  - *               *
+[df-replace-schema] 2021-07-04 18:34:33,452 INFO  - * * * * * * * * *
+[df-replace-schema] 2021-07-04 18:34:33,460 INFO  - ...Firing: replace-schema.sql
+[df-replace-schema] 2021-07-04 18:34:33,473 INFO  - 
+[df-replace-schema] /* Create Tables */
+[df-replace-schema] 
+[df-replace-schema] CREATE TABLE BREWERY
+[df-replace-schema] (
+[df-replace-schema] 	BREWERY_ID BIGINT NOT NULL UNIQUE AUTO_INCREMENT COMMENT '蔵元ID',
+[df-replace-schema] 	BREWERY_NAME VARCHAR(255) NOT NULL COMMENT '蔵元名',
+[df-replace-schema] 	PRIMARY KEY (BREWERY_ID)
+[df-replace-schema] ) COMMENT = '蔵元'
+[df-replace-schema] 2021-07-04 18:34:33,571 INFO  - 
+[df-replace-schema] CREATE TABLE CUSTOMER
+[df-replace-schema] (
+[df-replace-schema] 	CUSTOMER_ID BIGINT NOT NULL UNIQUE AUTO_INCREMENT COMMENT '顧客ID',
+[df-replace-schema] 	CUSTOMER_NAME VARCHAR(255) NOT NULL COMMENT '顧客名',
+[df-replace-schema] 	PRIMARY KEY (CUSTOMER_ID)
+[df-replace-schema] ) COMMENT = '顧客'
+[df-replace-schema] 2021-07-04 18:34:33,682 INFO  -  -> success=2 failure=0
+[df-replace-schema] 2021-07-04 18:34:33,682 INFO  - Create Schema: success=2, failure=0 (in 1 files)
+[df-replace-schema] 2021-07-04 18:34:33,767 INFO  - 
+[df-replace-schema] 2021-07-04 18:34:33,768 INFO  - * * * * * * * * * * *
+[df-replace-schema] 2021-07-04 18:34:33,770 INFO  - *                   *
+[df-replace-schema] 2021-07-04 18:34:33,770 INFO  - * Load Data         *
+[df-replace-schema] 2021-07-04 18:34:33,770 INFO  - *                   *
+[df-replace-schema] 2021-07-04 18:34:33,770 INFO  - * * * * * * * * * * *
+[df-replace-schema] 2021-07-04 18:34:33,828 INFO  - 
+[df-replace-schema] 2021-07-04 18:34:33,829 INFO  - * * * * * * * **
+[df-replace-schema] 2021-07-04 18:34:33,829 INFO  - *              *
+[df-replace-schema] 2021-07-04 18:34:33,829 INFO  - * Take Finally *
+[df-replace-schema] 2021-07-04 18:34:33,829 INFO  - *              *
+[df-replace-schema] 2021-07-04 18:34:33,830 INFO  - * * * * * * * **
+[df-replace-schema] 2021-07-04 18:34:33,848 INFO  - ...Firing: take-finally.sql
+[df-replace-schema] 2021-07-04 18:34:33,852 INFO  -  -> success=0 failure=0
+[df-replace-schema] 2021-07-04 18:34:33,853 INFO  - Take Finally: success=0, failure=0 (in 1 files)
+[df-replace-schema] 2021-07-04 18:34:33,856 INFO  - ...closeReally()
+[df-replace-schema] Sun Jul 04 18:34:33 JST 2021 WARN: Caught while disconnecting...
+[df-replace-schema] 
+[df-replace-schema] EXCEPTION STACK TRACE:
+[df-replace-schema] 
+[df-replace-schema] 
+[df-replace-schema] 
+[df-replace-schema] ** BEGIN NESTED EXCEPTION ** 
+[df-replace-schema] 
+[df-replace-schema] javax.net.ssl.SSLException
+[df-replace-schema] MESSAGE: closing inbound before receiving peer's close_notify
+[df-replace-schema] 
+[df-replace-schema] STACKTRACE:
+[df-replace-schema] 
+[df-replace-schema] javax.net.ssl.SSLException: closing inbound before receiving peer's close_notify
+[df-replace-schema] 	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:133)
+[df-replace-schema] 	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:117)
+[df-replace-schema] 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:356)
+[df-replace-schema] 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:312)
+[df-replace-schema] 	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:303)
+[df-replace-schema] 	at java.base/sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:817)
+[df-replace-schema] 	at java.base/sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:796)
+[df-replace-schema] 	at com.mysql.jdbc.MysqlIO.quit(MysqlIO.java:2249)
+[df-replace-schema] 	at com.mysql.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:4221)
+[df-replace-schema] 	at com.mysql.jdbc.ConnectionImpl.close(ConnectionImpl.java:1464)
+[df-replace-schema] 	at org.dbflute.helper.jdbc.connection.DfFittingConnection.closeReally(DfFittingConnection.java:67)
+[df-replace-schema] 	at org.dbflute.helper.jdbc.connection.DfDataSourceHandler.destroy(DfDataSourceHandler.java:121)
+[df-replace-schema] 	at org.dbflute.task.bs.assistant.DfTaskControlLogic.destroyDataSource(DfTaskControlLogic.java:129)
+[df-replace-schema] 	at org.dbflute.task.bs.DfAbstractTexenTask.destroyDataSource(DfAbstractTexenTask.java:181)
+[df-replace-schema] 	at org.dbflute.task.bs.DfAbstractTexenTask$1.callDestroyDataSource(DfAbstractTexenTask.java:121)
+[df-replace-schema] 	at org.dbflute.task.bs.assistant.DfTaskBasicController.destroyDataSource(DfTaskBasicController.java:181)
+[df-replace-schema] 	at org.dbflute.task.bs.assistant.DfTaskBasicController.execute(DfTaskBasicController.java:109)
+[df-replace-schema] 	at org.dbflute.task.bs.DfAbstractTexenTask.execute(DfAbstractTexenTask.java:151)
+[df-replace-schema] 	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:288)
+[df-replace-schema] 	at jdk.internal.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+[df-replace-schema] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[df-replace-schema] 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+[df-replace-schema] 	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+[df-replace-schema] 	at org.apache.tools.ant.Task.perform(Task.java:348)
+[df-replace-schema] 	at org.apache.tools.ant.Target.execute(Target.java:357)
+[df-replace-schema] 	at org.apache.tools.ant.Target.performTasks(Target.java:385)
+[df-replace-schema] 	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1329)
+[df-replace-schema] 	at org.apache.tools.ant.Project.executeTarget(Project.java:1298)
+[df-replace-schema] 	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+[df-replace-schema] 	at org.apache.tools.ant.Project.executeTargets(Project.java:1181)
+[df-replace-schema] 	at org.apache.tools.ant.Main.runBuild(Main.java:698)
+[df-replace-schema] 	at org.apache.tools.ant.Main.startAnt(Main.java:199)
+[df-replace-schema] 	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:257)
+[df-replace-schema] 	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:104)
+[df-replace-schema] 
+[df-replace-schema] 
+[df-replace-schema] ** END NESTED EXCEPTION **
+[df-replace-schema] 
+[df-replace-schema] 
+[df-replace-schema] 2021-07-04 18:34:33,900 INFO  - 
+[df-replace-schema] _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[df-replace-schema] [Final Message]: 00m01s646ms
+[df-replace-schema] 
+[df-replace-schema]   DBFLUTE_CLIENT: {emishudb}
+[df-replace-schema]     database  = mysql (MySQL 8.0.16)
+[df-replace-schema]     language  = java
+[df-replace-schema]     container = lasta_di
+[df-replace-schema]     package   = org.docksidestage.dbflute
+[df-replace-schema] 
+[df-replace-schema]   DBFLUTE_ENVIRONMENT_TYPE: {}
+[df-replace-schema]     driver = com.mysql.jdbc.Driver
+[df-replace-schema]     url    = jdbc:mysql://localhost:3306/emishudb
+[df-replace-schema]     schema = {emishudb.emishudb as main}
+[df-replace-schema]     user   = root
+[df-replace-schema]     props  = {}
+[df-replace-schema]     additionalSchema = 
+[df-replace-schema]     repsEnvType      = ut
+[df-replace-schema]     refreshProject   = $$AutoDetect$$
+[df-replace-schema] 
+[df-replace-schema]  Create Schema: success=2, failure=0 (in 1 files) - 00m00s375ms
+[df-replace-schema]   (Initialize Schema) - 00m00s135ms
+[df-replace-schema]   (Create Schema) - 00m00s231ms
+[df-replace-schema]   o replace-schema.sql
+[df-replace-schema] 
+[df-replace-schema]  Load Data: *empty loading - 00m00s050ms
+[df-replace-schema]   - (no data file)
+[df-replace-schema] 
+[df-replace-schema]  Take Finally: success=0, failure=0 (in 1 files) - 00m00s027ms
+[df-replace-schema]   o take-finally.sql
+[df-replace-schema] _/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
+
+BUILD SUCCESSFUL
+Total time: 4 seconds

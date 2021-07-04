@@ -1,0 +1,93 @@
+2021-07-04 18:34:32,282 [main] INFO  (DfReplaceSchemaTask#begin():94) - +------------------------------------------+
+2021-07-04 18:34:32,291 [main] INFO  (DfReplaceSchemaTask#begin():95) - |                                          |
+2021-07-04 18:34:32,292 [main] INFO  (DfReplaceSchemaTask#begin():96) - |              ReplaceSchema               |
+2021-07-04 18:34:32,305 [main] INFO  (DfReplaceSchemaTask#begin():104) - |                                          |
+2021-07-04 18:34:32,305 [main] INFO  (DfReplaceSchemaTask#begin():105) - +------------------------------------------+
+2021-07-04 18:34:32,357 [main] INFO  (DfDataSourceHandler#prepare():78) - ...Preparing data source:
+2021-07-04 18:34:32,357 [main] INFO  (DfDataSourceHandler#prepare():79) -   driver = com.mysql.jdbc.Driver
+2021-07-04 18:34:32,358 [main] INFO  (DfDataSourceHandler#prepare():80) -   url    = jdbc:mysql://localhost:3306/emishudb
+2021-07-04 18:34:32,358 [main] INFO  (DfDataSourceHandler#prepare():81) -   user   = root
+2021-07-04 18:34:32,377 [main] INFO  (DfDataSourceHandler#createConnection():166) - ...Connecting to database by data source:
+2021-07-04 18:34:33,284 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():233) -   product = MySQL 8.0.16
+2021-07-04 18:34:33,285 [main] INFO  (DfDataSourceHandler#setupConnectionMetaInfo():234) -   driver  = MySQL Connector Java mysql-connector-java-5.1.46 ( Revision: 9cc87a48e75c2d2e87c1a293b2862ce651cb256e ) for JDBC 4.0
+2021-07-04 18:34:33,313 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():253) - 
+2021-07-04 18:34:33,314 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():254) - * * * * * * * * * * *
+2021-07-04 18:34:33,314 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():255) - *                   *
+2021-07-04 18:34:33,314 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():256) - * Initialize Schema *
+2021-07-04 18:34:33,315 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():257) - *                   *
+2021-07-04 18:34:33,315 [main] INFO  (DfCreateSchemaProcess#initializeSchemaMainDrop():258) - * * * * * * * * * * *
+2021-07-04 18:34:33,345 [main] INFO  (DfTableExtractor#doGetTableList():66) - ...Getting tables:
+2021-07-04 18:34:33,345 [main] INFO  (DfTableExtractor#doGetTableList():67) -   schema = {emishudb.emishudb as main}
+2021-07-04 18:34:33,345 [main] INFO  (DfTableExtractor#doGetTableList():68) -   types  = [TABLE, VIEW]
+2021-07-04 18:34:33,450 [main] INFO  (DfCreateSchemaProcess#createSchema():293) - 
+2021-07-04 18:34:33,451 [main] INFO  (DfCreateSchemaProcess#createSchema():294) - * * * * * * * * *
+2021-07-04 18:34:33,451 [main] INFO  (DfCreateSchemaProcess#createSchema():295) - *               *
+2021-07-04 18:34:33,451 [main] INFO  (DfCreateSchemaProcess#createSchema():296) - * Create Schema *
+2021-07-04 18:34:33,451 [main] INFO  (DfCreateSchemaProcess#createSchema():297) - *               *
+2021-07-04 18:34:33,452 [main] INFO  (DfCreateSchemaProcess#createSchema():298) - * * * * * * * * *
+2021-07-04 18:34:33,460 [main] INFO  (DfSqlFileFireMan#fire():68) - ...Firing: replace-schema.sql
+2021-07-04 18:34:33,473 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+/* Create Tables */
+
+CREATE TABLE BREWERY
+(
+	BREWERY_ID BIGINT NOT NULL UNIQUE AUTO_INCREMENT COMMENT '蔵元ID',
+	BREWERY_NAME VARCHAR(255) NOT NULL COMMENT '蔵元名',
+	PRIMARY KEY (BREWERY_ID)
+) COMMENT = '蔵元'
+2021-07-04 18:34:33,571 [main] INFO  (DfSqlFileRunnerBase#traceSql():168) - 
+CREATE TABLE CUSTOMER
+(
+	CUSTOMER_ID BIGINT NOT NULL UNIQUE AUTO_INCREMENT COMMENT '顧客ID',
+	CUSTOMER_NAME VARCHAR(255) NOT NULL COMMENT '顧客名',
+	PRIMARY KEY (CUSTOMER_ID)
+) COMMENT = '顧客'
+2021-07-04 18:34:33,682 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=2 failure=0
+2021-07-04 18:34:33,682 [main] INFO  (DfSqlFileFireMan#fire():93) - Create Schema: success=2, failure=0 (in 1 files)
+2021-07-04 18:34:33,767 [main] INFO  (DfLoadDataProcess#execute():134) - 
+2021-07-04 18:34:33,768 [main] INFO  (DfLoadDataProcess#execute():135) - * * * * * * * * * * *
+2021-07-04 18:34:33,770 [main] INFO  (DfLoadDataProcess#execute():136) - *                   *
+2021-07-04 18:34:33,770 [main] INFO  (DfLoadDataProcess#execute():137) - * Load Data         *
+2021-07-04 18:34:33,770 [main] INFO  (DfLoadDataProcess#execute():138) - *                   *
+2021-07-04 18:34:33,770 [main] INFO  (DfLoadDataProcess#execute():139) - * * * * * * * * * * *
+2021-07-04 18:34:33,828 [main] INFO  (DfTakeFinallyProcess#takeFinally():244) - 
+2021-07-04 18:34:33,829 [main] INFO  (DfTakeFinallyProcess#takeFinally():245) - * * * * * * * **
+2021-07-04 18:34:33,829 [main] INFO  (DfTakeFinallyProcess#takeFinally():246) - *              *
+2021-07-04 18:34:33,829 [main] INFO  (DfTakeFinallyProcess#takeFinally():247) - * Take Finally *
+2021-07-04 18:34:33,829 [main] INFO  (DfTakeFinallyProcess#takeFinally():248) - *              *
+2021-07-04 18:34:33,830 [main] INFO  (DfTakeFinallyProcess#takeFinally():249) - * * * * * * * **
+2021-07-04 18:34:33,848 [main] INFO  (DfSqlFileFireMan#fire():68) - ...Firing: take-finally.sql
+2021-07-04 18:34:33,852 [main] INFO  (DfSqlFileRunnerBase#traceResult():172) -  -> success=0 failure=0
+2021-07-04 18:34:33,853 [main] INFO  (DfSqlFileFireMan#fire():93) - Take Finally: success=0, failure=0 (in 1 files)
+2021-07-04 18:34:33,856 [main] INFO  (DfDataSourceHandler#destroy():120) - ...closeReally()
+2021-07-04 18:34:33,900 [main] INFO  (DfDBFluteTaskUtil#logFinalMessage():139) - 
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+[Final Message]: 00m01s646ms
+
+  DBFLUTE_CLIENT: {emishudb}
+    database  = mysql (MySQL 8.0.16)
+    language  = java
+    container = lasta_di
+    package   = org.docksidestage.dbflute
+
+  DBFLUTE_ENVIRONMENT_TYPE: {}
+    driver = com.mysql.jdbc.Driver
+    url    = jdbc:mysql://localhost:3306/emishudb
+    schema = {emishudb.emishudb as main}
+    user   = root
+    props  = {}
+    additionalSchema = 
+    repsEnvType      = ut
+    refreshProject   = $$AutoDetect$$
+
+ Create Schema: success=2, failure=0 (in 1 files) - 00m00s375ms
+  (Initialize Schema) - 00m00s135ms
+  (Create Schema) - 00m00s231ms
+  o replace-schema.sql
+
+ Load Data: *empty loading - 00m00s050ms
+  - (no data file)
+
+ Take Finally: success=0, failure=0 (in 1 files) - 00m00s027ms
+  o take-finally.sql
+_/_/_/_/_/_/_/_/_/_/ {ReplaceSchema}
